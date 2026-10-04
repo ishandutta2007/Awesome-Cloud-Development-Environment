@@ -56,9 +56,9 @@ Key **2026 CDE market trends** include:
 
 ## 🔓 Open-Source GitHub Projects
 
-Sorted by GitHub star count (descending). Star badges link directly to each repository's stargazers page.
+Sorted by GitHub Stars_Count (descending). Stars_Badges link directly to each repository's stargazers page.
 
-| Repo | Description | Stars |
+| Repo | Description | GitHub_Stars |
 |---|---|---|
 | **[code-server](https://github.com/coder/code-server)** | Run VS Code on any remote Linux/Cloud machine and access it securely through any web browser. (MIT) | [![Stars](https://img.shields.io/github/stars/coder/code-server?style=social&color=white)](https://github.com/coder/code-server/stargazers) |
 | **[GitLab Workspaces](https://github.com/gitlab-org/gitlab)** | Built-in remote development environments for GitLab using Kubernetes and DevContainers. (MIT / EE) | [![Stars](https://img.shields.io/github/stars/gitlab-org/gitlab?style=social&color=white)](https://github.com/gitlab-org/gitlab/stargazers) |
