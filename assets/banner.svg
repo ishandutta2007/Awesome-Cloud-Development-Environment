@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="50%" stop-color="#bc8cff"/>
+      <stop offset="100%" stop-color="#3fb950"/>
+    </linearGradient>
+
+    <linearGradient id="card-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f242e" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#11151c" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="accent-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f6feb"/>
+      <stop offset="100%" stop-color="#8957e5"/>
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      .bg-grid {
+        stroke: #21262d;
+        stroke-width: 1;
+        opacity: 0.4;
+      }
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        fill: url(#title-grad);
+      }
+      .subtitle-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        fill: #8b949e;
+      }
+      .pill-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        fill: #c9d1d9;
+      }
+      
+      @keyframes pulseGlow {
+        0% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.05); }
+        100% { opacity: 0.3; transform: scale(1); }
+      }
+
+      @keyframes floatParticle {
+        0% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+        50% { transform: translateY(-15px) translateX(10px); opacity: 0.8; }
+        100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+      }
+
+      @keyframes dashFlow {
+        from { stroke-dashoffset: 100; }
+        to { stroke-dashoffset: 0; }
+      }
+
+      .animated-circle-1 { animation: pulseGlow 6s infinite ease-in-out; transform-origin: 200px 100px; }
+      .animated-circle-2 { animation: pulseGlow 8s infinite ease-in-out 2s; transform-origin: 1000px 220px; }
+      .particle-1 { animation: floatParticle 4s infinite ease-in-out; }
+      .particle-2 { animation: floatParticle 5s infinite ease-in-out 1s; }
+      .flow-line {
+        stroke: #388bfd;
+        stroke-width: 2;
+        stroke-dasharray: 8 6;
+        animation: dashFlow 20s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="320" rx="16" fill="url(#bg-grad)"/>
+
+  <!-- Dynamic Glowing Orbs in Background -->
+  <circle cx="180" cy="90" r="140" fill="#1f6feb" opacity="0.25" filter="url(#glow)" class="animated-circle-1"/>
+  <circle cx="1020" cy="230" r="150" fill="#8957e5" opacity="0.2" filter="url(#glow)" class="animated-circle-2"/>
+
+  <!-- Grid Background Lines -->
+  <g class="bg-grid">
+    <path d="M0 40 H1200 M0 80 H1200 M0 120 H1200 M0 160 H1200 M0 200 H1200 M0 240 H1200 M0 280 H1200" />
+    <path d="M80 0 V320 M160 0 V320 M240 0 V320 M320 0 V320 M400 0 V320 M480 0 V320 M560 0 V320 M640 0 V320 M720 0 V320 M800 0 V320 M880 0 V320 M960 0 V320 M1040 0 V320 M1120 0 V320" />
+  </g>
+
+  <!-- Animated Connection Line -->
+  <path d="M 100 250 Q 300 280 600 240 T 1100 250" fill="none" class="flow-line" />
+
+  <!-- Floating Particles -->
+  <circle cx="220" cy="180" r="4" fill="#58a6ff" class="particle-1"/>
+  <circle cx="950" cy="80" r="5" fill="#bc8cff" class="particle-2"/>
+  <circle cx="500" cy="50" r="3" fill="#3fb950" class="particle-1"/>
+
+  <!-- Background Cards / Graphic Accents (Positioned below text area) -->
+  <g transform="translate(760, 45)">
+    <rect width="380" height="210" rx="12" fill="url(#card-grad-1)" stroke="#30363d" stroke-width="1.5"/>
+    <!-- Terminal Decor -->
+    <rect x="1" y="1" width="378" height="32" rx="11" fill="#161b22"/>
+    <circle cx="20" cy="16" r="5" fill="#ff5f56"/>
+    <circle cx="36" cy="16" r="5" fill="#ffbd2e"/>
+    <circle cx="52" cy="16" r="5" fill="#27c93f"/>
+    <text x="75" y="21" font-family="monospace" font-size="12" fill="#8b949e">cloud-environment.config.yml</text>
+    
+    <!-- Simulated Code / Metrics inside Terminal -->
+    <text x="20" y="65" font-family="monospace" font-size="13" fill="#79c0ff">$ cde spin-up --template=devcontainer</text>
+    <text x="20" y="90" font-family="monospace" font-size="13" fill="#7ee787">✔ Provisioning cloud compute... done (1.2s)</text>
+    <text x="20" y="115" font-family="monospace" font-size="13" fill="#7ee787">✔ Mounting persistent EBS volume... done</text>
+    <text x="20" y="140" font-family="monospace" font-size="13" fill="#d2a8ff">➜ IDE Ready: https://dev.cde.cloud/workspace</text>
+    
+    <!-- Status Pill in Card -->
+    <rect x="20" y="160" width="120" height="26" rx="13" fill="#238636" opacity="0.3"/>
+    <text x="35" y="177" font-family="sans-serif" font-size="11" font-weight="600" fill="#3fb950">● Status: Active</text>
+  </g>
+
+  <!-- Main Banner Header & Foreground Text (Z-Index / Layers above background elements) -->
+  <g transform="translate(60, 0)">
+    <!-- Top Pill Badge -->
+    <g transform="translate(0, 50)">
+      <rect width="260" height="28" rx="14" fill="#1f6feb" opacity="0.2" stroke="#1f6feb" stroke-width="1"/>
+      <text x="14" y="18" class="pill-text">⚡ Cloud Development Environments</text>
+    </g>
+
+    <!-- Main Title (Foreground) -->
+    <text x="0" y="130" class="title-text">Awesome Cloud Dev Environments</text>
+
+    <!-- Subtitle (Foreground) -->
+    <text x="0" y="170" class="subtitle-text">Curated List of SaaS Platforms &amp; Open-Source Projects</text>
+    <text x="0" y="195" class="subtitle-text">Cloud IDEs • Remote Workstations • DevContainers • Reproducible Envs</text>
+
+    <!-- Feature Pills -->
+    <g transform="translate(0, 225)">
+      <rect x="0" y="0" width="120" height="30" rx="6" fill="#21262d" stroke="#30363d"/>
+      <text x="16" y="20" class="pill-text">☁️ Hosted SaaS</text>
+
+      <rect x="132" y="0" width="145" height="30" rx="6" fill="#21262d" stroke="#30363d"/>
+      <text x="16" y="20" class="pill-text">🔓 Open-Source</text>
+
+      <rect x="289" y="0" width="140" height="30" rx="6" fill="#21262d" stroke="#30363d"/>
+      <text x="16" y="20" class="pill-text">🐳 DevContainers</text>
+    </g>
+  </g>
+</svg>
